@@ -33,7 +33,7 @@ Người gắn nhãn 1: Nguyễn Công Quân · Người gắn nhãn 2: Nguyễn
 
 ## Nhãn đề xuất để hai thành viên kiểm tra
 
-Đây là bản dự thảo do Codex tổng hợp từ mô tả 20 ca và đối chiếu với `docs/mau_giang_vien_nhan_20_ca.md`. **Không dùng cột này làm nhãn độc lập của Quân hoặc Đăng, nhãn thống nhất hay tỉ lệ đồng thuận.**
+Đây là bản do Codex tổng hợp từ mô tả 20 ca, đối chiếu với `docs/mau_giang_vien_nhan_20_ca.md` và đã được người dùng rà nội dung. **Không dùng cột này làm nhãn độc lập của Quân hoặc Đăng, nhãn thống nhất hay tỉ lệ đồng thuận.**
 
 | Ca | Nhãn đề xuất | Lý do chính |
 | --: | --- | --- |
