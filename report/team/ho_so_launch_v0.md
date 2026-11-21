@@ -8,7 +8,7 @@ Nhóm: **QD** · Lớp: **L3A** · Phạm vi đề xuất: `noi_dia` + `hang_nan
 | 2 · Ba yếu tố nhạy nhất | Làm lại +51,8%; xem lại +40,7%; lương +23,1% (simulated) | Giả lập | PM trợ lý hoàn phí |
 | 3 · So với nhân viên tự làm | Trong phạm vi, 4.599 đ/việc khi cộng 40 triệu đ/tháng cố định tại 45.000 yêu cầu/tháng, bằng 0,38× mức 12.000 đ; ở nửa khối lượng là 5.784 đ (simulated) | Giả lập | Người kiểm số |
 | 4 · Chỉ số chính, dùng, an toàn | Đợt chạy thử: đóng 24 giờ không mở lại 7 ngày 82,83%; sửa/bỏ gợi ý 27,12%; mở lại 7 ngày 4,25%. Chưa suy ra tác động khi chưa có đối chứng | Xong, có bằng chứng | Trưởng nhóm CSKH |
-| 5 · Bảng lỗi và cách khắc phục | 0/20 ca có hai bộ nhãn độc lập được ghi vào hồ sơ; 0/5 dòng khắc phục được xác nhận | Chưa | Người giữ hồ sơ |
+| 5 · Bảng lỗi và cách khắc phục | Đã có 20/20 nhãn người 1 và 5/5 phương án khắc phục mẫu; còn thiếu 20 nhãn người 2, tỉ lệ đồng thuận và xác nhận nhãn thống nhất | Chưa | Người giữ hồ sơ |
 | 6 · Pilot plan | Đề xuất 20 nhân viên/nhóm, 299 yêu cầu/người, 859 yêu cầu hiệu dụng/nhóm để phát hiện 6 điểm; nếu tác động thật 5 điểm, power chỉ khoảng 0,64 | Xong, có bằng chứng | Giám đốc vận hành |
 | 7 · Rủi ro kinh tế | Xem lại 100% cho 11.743 đ/việc, hoặc 12.414 đ khi dùng 15,3 phút làm lại trung bình, so với 12.000 đ nhân viên tự làm (simulated) | Giả lập | PM trợ lý hoàn phí |
 

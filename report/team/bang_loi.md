@@ -4,32 +4,32 @@
 
 ## Hai bộ nhãn độc lập
 
-Người gắn nhãn 1: Nguyễn Công Quân · Người gắn nhãn 2: Nguyễn Văn Đăng. Bảng dưới đây chỉ dành cho hai bộ nhãn do từng người tự ghi trước khi đối chiếu. Phiếu hiện có của Quân được ghi là **bài mẫu**, còn nhãn của Đăng chưa được nộp; vì vậy chưa có hai bộ nhãn độc lập hợp lệ để điền bảng này.
+Người gắn nhãn 1: Nguyễn Công Quân · Người gắn nhãn 2: Nguyễn Văn Đăng. Trong kịch bản bài mẫu, bộ 20 nhãn người 1 của Quân đã được chép từ `2A202603675_nhan_doc_lap.md`; nhãn người 2 của Đăng chưa được nộp nên chưa tính đồng thuận hoặc nhãn thống nhất.
 
 | Ca | Nhãn người 1 | Nhãn người 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
-| 1 | ... | ... | ... | ... |
-| 2 | ... | ... | ... | ... |
-| 3 | ... | ... | ... | ... |
-| 4 | ... | ... | ... | ... |
-| 5 | ... | ... | ... | ... |
-| 6 | ... | ... | ... | ... |
-| 7 | ... | ... | ... | ... |
-| 8 | ... | ... | ... | ... |
-| 9 | ... | ... | ... | ... |
-| 10 | ... | ... | ... | ... |
-| 11 | ... | ... | ... | ... |
-| 12 | ... | ... | ... | ... |
-| 13 | ... | ... | ... | ... |
-| 14 | ... | ... | ... | ... |
-| 15 | ... | ... | ... | ... |
-| 16 | ... | ... | ... | ... |
-| 17 | ... | ... | ... | ... |
-| 18 | ... | ... | ... | ... |
-| 19 | ... | ... | ... | ... |
-| 20 | ... | ... | ... | ... |
+| 1 | Do người dùng | ... | ... | ... |
+| 2 | Hệ thống | ... | ... | ... |
+| 3 | Ngữ cảnh | ... | ... | ... |
+| 4 | Giới hạn hệ thống | ... | ... | ... |
+| 5 | Ngầm | ... | ... | ... |
+| 6 | Do người dùng | ... | ... | ... |
+| 7 | Hệ thống | ... | ... | ... |
+| 8 | Hệ thống | ... | ... | ... |
+| 9 | Do người dùng | ... | ... | ... |
+| 10 | Ngữ cảnh | ... | ... | ... |
+| 11 | Giới hạn hệ thống | ... | ... | ... |
+| 12 | Ngầm | ... | ... | ... |
+| 13 | Giới hạn hệ thống | ... | ... | ... |
+| 14 | Do người dùng | ... | ... | ... |
+| 15 | Hệ thống | ... | ... | ... |
+| 16 | Ngữ cảnh | ... | ... | ... |
+| 17 | Ngầm | ... | ... | ... |
+| 18 | Ngữ cảnh | ... | ... | ... |
+| 19 | Giới hạn hệ thống | ... | ... | ... |
+| 20 | Hệ thống | ... | ... | ... |
 
-**Tỉ lệ đồng thuận:** chưa tính; cần hai bộ nhãn độc lập đã khóa trước khi so sánh.
+**Tỉ lệ đồng thuận:** chưa tính; đã có 20/20 nhãn người 1, còn chờ 20/20 nhãn người 2.
 
 ## Nhãn đề xuất để hai thành viên kiểm tra
 
