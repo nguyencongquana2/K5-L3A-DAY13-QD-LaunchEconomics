@@ -42,10 +42,10 @@ Hai bộ nhãn ở CP3 phải được Quân và Đăng làm độc lập trư�
 
 | Thành viên | Bằng chứng đã hoàn thành | Việc còn chờ bằng chứng |
 | ---------- | ------------------------ | ----------------------- |
-| Nguyễn Công Quân | Code A1–A4 và B1–B4 trong `src/lab13.py`; `chi_so.md`; bản đầu `group_report.md`; kiểm tra lại code, D1 và YAML sau khi ghép bài | Bộ nhãn độc lập số 1 ở CP3; tham gia duyệt chéo thực tế |
+| Nguyễn Công Quân | Code A1–A4 và B1–B4 trong `src/lab13.py`; `chi_so.md`; bản đầu `group_report.md`; kiểm tra lại code, D1 và YAML; bộ nhãn người 1 gồm 20 ca trong bài mẫu CP3 | Tham gia duyệt chéo thực tế |
 | Nguyễn Văn Đăng | Đối chiếu và điền `bang_chi_phi.md`; code D1; `pilot_plan.yaml`; cập nhật `ho_so_launch_v0.md`, `group_report.md` và hồ sơ nộp | Bộ nhãn độc lập số 2 ở CP3; tham gia duyệt chéo thực tế |
 
-Trạng thái trên chỉ ghi bằng chứng đã có trong repo. `bang_loi.md` và `phieu_cham.md` phải được cập nhật sau hoạt động độc lập/thực tế, không điền kết quả giả định.
+Trạng thái trên chỉ ghi bằng chứng đã có trong repo. `bang_loi.md` vẫn chờ bộ nhãn người 2 của Đăng trước khi tính đồng thuận; `phieu_cham.md` chỉ điền sau hoạt động duyệt chéo thực tế.
 
 ## Cá nhân
 

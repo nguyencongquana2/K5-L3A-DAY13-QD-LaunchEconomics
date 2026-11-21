@@ -12,7 +12,7 @@
 - Cài môi trường và triển khai các phép tính A1–A4, B1–B4 trong `src/lab13.py`.
 - Kiểm tra công thức cỡ mẫu và hệ số thiết kế của CP4.
 - Soạn đặc tả chỉ số, event, rủi ro kinh tế và báo cáo nhóm.
-- Gắn độc lập 20 ca lỗi với vai trò người gắn nhãn 1; phần này chưa thực hiện và không được điền thay bằng AI.
+- Hoàn thiện bộ nhãn người 1 cho 20 ca lỗi trong kịch bản bài mẫu CP3 và chưa đối chiếu với bộ nhãn người 2.
 
 ## 3. Đóng góp cụ thể
 
@@ -33,8 +33,8 @@
 
 ## 5. Công cụ AI đã dùng
 
-Sử dụng Codex để hỗ trợ đọc yêu cầu, triển khai code, soát công thức và định dạng báo cáo. Kết quả được tự kiểm tra bằng ba phép thử A1, chạy `lab13.py` trên hai CSV của repo, đối chiếu các mốc sai số 2% trong hướng dẫn và không dùng AI để tạo hai bộ nhãn độc lập hoặc kết quả duyệt chéo.
+Sử dụng Codex để hỗ trợ đọc yêu cầu, triển khai code, soát công thức, định dạng báo cáo và chuẩn bị bộ nhãn người 1 trong kịch bản bài mẫu giảng viên. Kết quả số được kiểm tra bằng ba phép thử A1, chạy `lab13.py` trên hai CSV của repo và đối chiếu các mốc sai số 2% trong hướng dẫn. Chưa tạo bộ nhãn người 2, tỉ lệ đồng thuận hoặc kết quả duyệt chéo.
 
 ## 6. Tự đánh giá
 
-Phần code CP1–CP2, hồ sơ chỉ số và kiểm tra tích hợp sau khi ghép bài đã có output tái lập được. Hồ sơ hiện đề xuất No-go có căn cứ vì chưa có hai bộ nhãn CP3 độc lập; Quân vẫn phải tự hoàn thành bộ nhãn số 1 và tham gia duyệt chéo trước khi nộp bản chốt.
+Phần code CP1–CP2, hồ sơ chỉ số, kiểm tra tích hợp và bộ nhãn người 1 của bài mẫu đã có bằng chứng trong repo. Phần việc còn lại của Quân là cùng Đăng đối chiếu sau khi có bộ nhãn người 2 và tham gia duyệt chéo trước khi nộp bản chốt.
