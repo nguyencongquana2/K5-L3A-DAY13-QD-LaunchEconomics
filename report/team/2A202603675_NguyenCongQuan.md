@@ -20,12 +20,14 @@
 - Viết phần chạy tạo bảng A2–A4, chín kịch bản B1, kịch bản kết hợp B2, giới hạn chạy lại B3, xem lại 100% B4 và ba chỉ số E1.
 - Hoàn thiện `chi_so.md` với năm chỉ số, mười event có `trace_id`, kiểm tra chéo event và ba rủi ro kinh tế.
 - Soạn `group_report.md` theo bằng chứng hiện có và đánh dấu rõ các phần chưa hoàn thành.
+- Sau khi ghép phần của Nguyễn Văn Đăng, chạy lại toàn bộ `lab13.py`, kiểm tra cú pháp Python, xác thực `pilot_plan.yaml`, ba luật dừng và các placeholder còn lại.
 
 ## 4. Bằng chứng
 
 - `src/lab13.py` chạy hết và in `Ba phép thử đáp án biết trước: ĐẠT`.
 - Kết quả chính: 4.472 đ mỗi việc thành công (simulated); giới hạn hai lần chạy cho tổng chi phí hệ thống 6.901.220 đ (simulated); chỉ số thử 82,83%, 27,12% và 4,25%.
 - Kiểm tra CP4: 1.251 yêu cầu mỗi nhóm; DE = 2,48 với 75 yêu cầu/nhân viên; cần 42 nhân viên mỗi nhóm nên không đủ 40 người; với mức chênh 6 điểm cần 299 yêu cầu/nhân viên.
+- `pilot_plan.yaml` đọc được bằng `yaml.safe_load`, có ba luật dừng và không còn dấu `?` ngoài chú thích; không tìm thấy từ bị cấm trong hồ sơ nhóm.
 - File bằng chứng: `src/lab13.py`, `report/team/chi_so.md`, `report/team/group_report.md`.
 
 ## 5. Công cụ AI đã dùng
@@ -34,4 +36,4 @@ Sử dụng Codex để hỗ trợ đọc yêu cầu, triển khai code, soát c
 
 ## 6. Tự đánh giá
 
-Phần code CP1–CP2 và hồ sơ chỉ số đã có output tái lập được. Phần gắn nhãn CP3, đề xuất cuối và duyệt chéo vẫn phải hoàn thành trực tiếp cùng Nguyễn Văn Đăng trước khi nộp.
+Phần code CP1–CP2, hồ sơ chỉ số và kiểm tra tích hợp sau khi ghép bài đã có output tái lập được. Hồ sơ hiện đề xuất No-go có căn cứ vì chưa có hai bộ nhãn CP3 độc lập; Quân vẫn phải tự hoàn thành bộ nhãn số 1 và tham gia duyệt chéo trước khi nộp bản chốt.

@@ -2,8 +2,8 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:QD
-- Lớp: L3A 
+- Tên nhóm: QD
+- Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY13-QD-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
 - URL repo: `https://github.com/nguyencongquana2/K5-L3A-DAY13-QD-LaunchEconomics` · nhánh nộp: `main` · commit chốt: xem HEAD của `main`.
 
@@ -37,6 +37,15 @@ Bốn vai của lab:
 | Duyệt chéo, nộp bài | Cùng bảo vệ hồ sơ, hoàn thiện `phieu_cham.md`; kiểm tra code chạy hết | Cùng bảo vệ hồ sơ, hoàn thiện `phieu_cham.md`; kiểm tra đủ file và thông tin nộp |
 
 Hai bộ nhãn ở CP3 phải được Quân và Đăng làm độc lập trước khi so sánh. Mỗi người tự viết báo cáo cá nhân và chỉ ghi đóng góp đã thực sự hoàn thành.
+
+## Đóng góp đã hoàn thành
+
+| Thành viên | Bằng chứng đã hoàn thành | Việc còn chờ bằng chứng |
+| ---------- | ------------------------ | ----------------------- |
+| Nguyễn Công Quân | Code A1–A4 và B1–B4 trong `src/lab13.py`; `chi_so.md`; bản đầu `group_report.md`; kiểm tra lại code, D1 và YAML sau khi ghép bài | Bộ nhãn độc lập số 1 ở CP3; tham gia duyệt chéo thực tế |
+| Nguyễn Văn Đăng | Đối chiếu và điền `bang_chi_phi.md`; code D1; `pilot_plan.yaml`; cập nhật `ho_so_launch_v0.md`, `group_report.md` và hồ sơ nộp | Bộ nhãn độc lập số 2 ở CP3; tham gia duyệt chéo thực tế |
+
+Trạng thái trên chỉ ghi bằng chứng đã có trong repo. `bang_loi.md` và `phieu_cham.md` phải được cập nhật sau hoạt động độc lập/thực tế, không điền kết quả giả định.
 
 ## Cá nhân
 
