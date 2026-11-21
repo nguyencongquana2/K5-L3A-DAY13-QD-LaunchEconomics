@@ -1,51 +1,59 @@
-# Lab 13 · Nhiệm vụ D · Kế hoạch pilot trợ lý hoàn phí LogiX-VN (Gate 2a)
-# Điền mọi chỗ có dấu hỏi. Khi nộp, ngoài các dòng chú thích không còn dấu hỏi nào.
-# Kiểm tra đọc được: python -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml'))"
-#
-# D1 · Cỡ mẫu (baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02)
-#   a) Chia theo yêu cầu:
-#   b) Theo nhân viên, m = 75:
-#   c) 20 nhân viên mỗi nhóm:
-#   d) 6 depot mỗi nhóm:
-#   e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm:
-#
-# D2 · Năm câu kiểm tra "tách được tác động" với cách chia đã chọn (mỗi câu một dòng):
-#   1. Đối chứng chạy cùng thời gian:
-#   2. Chia ngẫu nhiên hay do người chọn:
-#   3. Ảnh hưởng gián tiếp và cách giảm:
-#   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước:
-#   5. Ít nhất 20 cụm mỗi nhóm:
-#
-# Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện):
-#
-# Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn:
+# Lab 13 · Nhiệm vụ D · Kế hoạch pilot đề xuất, chưa triển khai
+# D1. Giả định của lab: baseline 0,70; alpha 0,05; power 0,80; ICC 0,02.
+# a) Chia theo yêu cầu, tăng 5 điểm: 1.251 yêu cầu hiệu dụng mỗi nhóm.
+# b) Chia theo nhân viên, m=75: DE=2,48; cần 3.103 yêu cầu, tức 42 nhân viên
+#    mỗi nhóm; tổng 84 người vượt số 40 nhân viên của LogiX-VN.
+# c) Với 20 nhân viên mỗi nhóm: trần c/ICC = 1.000, dưới 1.251.
+# d) Với 6 depot mỗi nhóm: trần c/ICC = 300, dưới 1.251 và dưới 20 cụm.
+# e) Nếu chấp nhận mức chênh 6 điểm: cần 859 hiệu dụng mỗi nhóm.
+#    20 nhân viên mỗi nhóm × 299 yêu cầu/người / DE 6,96 = 859,20.
+# D2. Năm câu kiểm tra tách tác động với đơn vị chia là nhân viên:
+# 1. Có 20 nhân viên đối chứng làm cùng thời gian với nhóm can thiệp.
+# 2. Phân ngẫu nhiên 40 nhân viên, phân tầng theo depot; lưu seed trước pilot.
+# 3. Có thể chia sẻ gợi ý trong depot; khóa quyền theo tài khoản và log staff_id.
+# 4. Chỉ số, ngưỡng, ngày quyết định và luật dừng chốt trước ngày bắt đầu.
+# 5. Có đúng 20 cụm nhân viên mỗi nhóm khi phân tích chỉ số chính.
+# Đánh đổi: chỉ đủ power 0,80 cho 6 điểm, khoảng 0,64 nếu tác động thật 5 điểm;
+# chỉ phân tích chỉ số chính sau khi mỗi nhân viên có ít nhất 299 yêu cầu đủ theo dõi.
+# Đợt chạy thử: mở lại trong 7 ngày 51/1.200 = 4,25%; trong phạm vi đề xuất
+# là 3,97%. Ngưỡng so với đối chứng +2 điểm hoặc trần tuyệt đối 6%.
+# Dữ liệu mẫu chỉ có 6 depot/20 nhân viên; kế hoạch dùng 12 depot/40 nhân viên
+# của công ty, nên cần xác nhận phân bổ nhân viên và lưu lượng trước khi bắt đầu.
 
 pilot:
-  owner: "?"                      # một người có tên vai trò, không ghi "cả đội"
-  scope: "?"                      # loại yêu cầu nào, depot nào; dựa vào kết quả A3
+  owner: "Giám đốc vận hành LogiX-VN"
+  scope: "Đề xuất cho noi_dia và hang_nang ở 12 depot với 40 nhân viên; loại quoc_te (1,88 lần baseline) và doi_tac (điều khoản riêng). Số chi phí là simulated."
   assignment:
-    unit: "?"                     # request | staff | depot
+    unit: staff
     control_share: 0.5
     randomized: true
-  rollout: [0.10, 0.25, 0.50]     # mỗi bước một tuần
+    method: "Phân tầng theo depot, bốc thăm 20 nhân viên can thiệp và 20 nhân viên đối chứng bằng seed lưu trước pilot"
+  rollout: [0.10, 0.25, 0.50]
+  rollout_schedule: "Tuần 1: 4 nhân viên can thiệp và xem lại 100%; tuần 2: 10; tuần 3-4: đủ 20. Giữ 20 nhân viên đối chứng xuyên suốt. Chỉ dùng dữ liệu tuần 3-4 cho kiểm định chỉ số chính."
   primary_metric:
     name: dong_trong_24h_khong_mo_lai_7_ngay
     baseline: 0.70
-    mde: 0.05
+    mde: 0.06
     alpha: 0.05
     power: 0.80
-    n_per_arm: "?"
-    design_effect: "?"            # 1 nếu chia theo yêu cầu
-    clusters_per_arm: "?"         # để trống nếu chia theo yêu cầu
+    n_per_arm: 859
+    raw_requests_per_arm: 5980
+    requests_per_cluster: 299
+    design_effect: 6.96
+    clusters_per_arm: 20
+    analysis: "So sánh hai nhóm theo phân công ban đầu; dùng sai số chuẩn theo cụm nhân viên; chỉ khóa dữ liệu sau khi đủ 7 ngày quan sát mở lại"
   identifiability:
-    concurrent_control: "?"
-    spillover_risk: "?"
-    predeclared: "?"
+    concurrent_control: "20 nhân viên đối chứng ở cùng 12 depot, cùng các tuần và cùng loại yêu cầu"
+    spillover_risk: "Nhân viên cùng depot có thể chia sẻ gợi ý; giới hạn quyền trợ lý theo tài khoản, ghi staff_id và trace_id khi mở gợi ý"
+    predeclared: "Lưu seed chia nhóm, chỉ số chính, MDE 6 điểm, ngưỡng an toàn, luật dừng và ngày quyết định trước 2026-11-30"
   stop_rules:
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-  interim_looks: "chỉ kiểm tra chỉ số an toàn"
-  rollback: "?"                   # ai bấm, mất bao lâu, khách được phục vụ bằng gì
-  decision_date: "?"
-  simulated_inputs: ["?"]         # liệt kê mọi con số giả lập đã dùng
+    - "NẾU có ít nhất 1 lệnh hoàn trùng, hoặc tỉ lệ mở lại 7 ngày của nhóm can thiệp cao hơn đối chứng ít nhất 2 điểm phần trăm hay vượt 6% TRONG 1 ngày kiểm tra trên các yêu cầu đã đủ 7 ngày theo dõi THÌ Giám đốc vận hành tắt trợ lý trong 30 phút, chuyển các yêu cầu sang nhân viên và đối soát sổ cái KHÔNG THÌ không được tăng bước rollout trước khi Trưởng nhóm CSKH ký xác nhận an toàn"
+    - "NẾU chi phí mỗi việc thành công đo bằng phút thực vượt 8.000 đ TRONG 2 tuần liên tiếp sau tuần xem lại 100% THÌ PM trợ lý hoàn phí thu hẹp về noi_dia và giới hạn tối đa 2 lần chạy KHÔNG THÌ không được mở thêm hang_nang hoặc tăng bước rollout khi thiếu dữ liệu chi phí"
+    - "NẾU tỉ lệ gợi ý bị sửa hoặc bỏ vượt 40% TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn ít nhất 5 nhân viên trong 3 ngày và sửa hướng dẫn xem lại KHÔNG THÌ không được chuyển bước rollout trước khi kết luận nguyên nhân"
+  interim_looks: "Chỉ xem chỉ số an toàn và tính toàn vẹn sổ cái; không xét p-value của chỉ số chính trước ngày quyết định"
+  rollback: "Giám đốc vận hành tắt cờ truy cập trợ lý trong tối đa 30 phút; yêu cầu mới chuyển về luồng nhân viên tự làm, yêu cầu đã ghi sổ được đối soát bằng idempotency_key"
+  planned_start_date: "2026-11-30"
+  decision_date: "2027-01-05"
+  simulated_inputs:
+    - "phut_xem_lai_simulated và phut_lam_lai_simulated trong phân tích A-B"
+    - "Các mức chi phí 4.472 đ, 8.221 đ, 11.743-12.414 đ/việc từ mô hình simulated; phải thay bằng phút đo thật trong pilot"

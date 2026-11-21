@@ -5,7 +5,7 @@
 - Tên nhóm:QD
 - Lớp: L3A 
 - Repo nhóm: `K5-L3A-DAY13-QD-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- URL repo: `https://github.com/nguyencongquana2/K5-L3A-DAY13-QD-LaunchEconomics` · nhánh nộp: `main` · commit chốt: xem HEAD của `main`.
 
 ## Thành viên
 

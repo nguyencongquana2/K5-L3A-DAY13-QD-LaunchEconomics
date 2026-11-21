@@ -1,9 +1,11 @@
 """Lab 13 · Định giá agent và lập kế hoạch pilot (Gate 2a) — bài làm của nhóm (file nộp).
-Chạy trong thư mục src/: python3 lab13.py   (cần pandas; Nhiệm vụ D cần thêm statsmodels)
-Không cần khoá API. Điền các chỗ ghi VIẾT Ở ĐÂY (đánh dấu TODO CP1…CP4). Dữ liệu trong hai file CSV là giả lập.
+Chạy trong thư mục src/: python3 lab13.py   (cần pandas)
+Không cần khoá API. Dữ liệu trong hai file CSV là giả lập.
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
 import math
+import sys
+from statistics import NormalDist
 import pandas as pd
 
 # Bảng giá GIẢ ĐỊNH của lab (không phải giá thật của nhà cung cấp nào)
@@ -15,7 +17,7 @@ BASELINE = 12000    # đồng cho 1 yêu cầu khi nhân viên tự làm (6 phú
 
 
 # ---------- Nhiệm vụ A1 · Kinh tế của việc chạy lại ----------
-# TODO CP1: viết ba hàm dưới đây cho tới khi kiem_tra_dap_an_biet_truoc() in ĐẠT.
+# CP1: ba hàm được kiểm bằng kiem_tra_dap_an_biet_truoc().
 def so_lan_chay_ky_vong(p, k=None):
     """Số lần chạy trung bình cho 1 yêu cầu khi mỗi lần đúng với xác suất p.
     k = số lần chạy tối đa; k=None nghĩa là chạy lại đến khi đúng."""
@@ -44,6 +46,34 @@ def he_so_chi_phi_moi_viec_thanh_cong(p, k=None):
     return so_lan_chay_ky_vong(p, k) / ti_le_thanh_cong(p, k)
 
 
+def co_mau_hai_ti_le(p1, p2, alpha=0.05, power=0.80):
+    """Cỡ mẫu mỗi nhóm khi so sánh hai tỉ lệ bằng xấp xỉ chuẩn."""
+    if not 0 < p1 < 1 or not 0 < p2 < 1 or p1 == p2:
+        raise ValueError('p1 và p2 phải khác nhau và thuộc (0, 1)')
+    if not 0 < alpha < 1 or not 0 < power < 1:
+        raise ValueError('alpha và power phải thuộc (0, 1)')
+    z_alpha = NormalDist().inv_cdf(1 - alpha / 2)
+    z_power = NormalDist().inv_cdf(power)
+    p_bar = (p1 + p2) / 2
+    tu_so = (
+        z_alpha * math.sqrt(2 * p_bar * (1 - p_bar))
+        + z_power * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))
+    ) ** 2
+    return math.ceil(tu_so / (p2 - p1) ** 2)
+
+
+def he_so_thiet_ke(m, icc):
+    """Design effect cho cụm có m yêu cầu."""
+    if m < 1 or not 0 <= icc < 1:
+        raise ValueError('m >= 1 và ICC thuộc [0, 1)')
+    return 1 + (m - 1) * icc
+
+
+def co_mau_hieu_dung(so_cum, m, icc):
+    """Số yêu cầu hiệu dụng của một nhóm khi chia theo cụm."""
+    return so_cum * m / he_so_thiet_ke(m, icc)
+
+
 def kiem_tra_dap_an_biet_truoc():
     """Ba phép thử bắt buộc đạt 100% trước khi tính trên dữ liệu."""
     assert abs(so_lan_chay_ky_vong(0.8, 2) - 1.20) < 1e-9, 'p=0,8, tối đa 2 lần → 1,20 lần chạy'
@@ -53,7 +83,7 @@ def kiem_tra_dap_an_biet_truoc():
 
 
 # ---------- Nhiệm vụ A2 · Mô hình chi phí từ trace ----------
-# TODO CP1: viết mo_hinh; CP2 gọi lại hàm này với tham số giá và hệ số đã đổi.
+# CP1: mô hình chi phí; CP2 gọi lại với tham số giá và hệ số đã đổi.
 def mo_hinh(runs, reqs, gia_vao=26, gia_ra=130, gia_tool=15, luong_phut=2000,
             he_so_xem_lai=1.0, he_so_lam_lai=1.0, max_lan_chay=None):
     """Trả về dict gồm: token, tool, xem_lai, lam_lai, tong, thanh_cong, cps (chi phí mỗi việc thành công).
@@ -159,6 +189,9 @@ def tinh_b4_xem_lai_100_phan_tram(runs, reqs):
 
 
 if __name__ == '__main__':
+    # PowerShell có thể mặc định stdout cp1252, không in được tiếng Việt.
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
     runs = pd.read_csv('logix_runs.csv')
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
 
@@ -257,6 +290,27 @@ if __name__ == '__main__':
     print(f'ti_le_bo_qua: {ti_le_bo_qua:.2%}')
     print(f'ti_le_mo_lai: {ti_le_mo_lai:.2%}')
 
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    print('\n=== D1 · Cỡ mẫu pilot ===')
+    icc = 0.02
+    n_5_diem = co_mau_hai_ti_le(0.70, 0.75)
+    de_75 = he_so_thiet_ke(75, icc)
+    so_yc_can_theo_nhan_vien = math.ceil(n_5_diem * de_75)
+    so_nhan_vien_moi_nhom = math.ceil(so_yc_can_theo_nhan_vien / 75)
+    n_6_diem = co_mau_hai_ti_le(0.70, 0.76)
+    # Giải 20m / (1 + (m - 1)ICC) >= n_6_diem.
+    m_toi_thieu = math.ceil(
+        n_6_diem * (1 - icc) / (20 - n_6_diem * icc)
+    )
+    print(f'a) Theo yêu cầu, +5 điểm: {n_5_diem:,} yêu cầu/nhóm')
+    print(
+        f'b) Theo nhân viên, m=75: DE={de_75:.2f}; '
+        f'{so_yc_can_theo_nhan_vien:,} yêu cầu/nhóm; '
+        f'{so_nhan_vien_moi_nhom} nhân viên/nhóm'
+    )
+    print(f'c) 20 nhân viên/nhóm: trần hiệu dụng < {20 / icc:,.0f}')
+    print(f'd) 6 depot/nhóm: trần hiệu dụng < {6 / icc:,.0f}')
+    print(
+        f'e) +6 điểm: {n_6_diem:,} hiệu dụng/nhóm; '
+        f'm >= {m_toi_thieu}; DE={he_so_thiet_ke(m_toi_thieu, icc):.2f}; '
+        f'n hiệu dụng={co_mau_hieu_dung(20, m_toi_thieu, icc):.2f}'
+    )
