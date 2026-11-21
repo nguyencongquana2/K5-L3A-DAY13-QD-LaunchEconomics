@@ -1,6 +1,6 @@
 # Phiếu gắn nhãn độc lập mẫu của Nguyễn Công Quân
 
-Phiếu này là bài mẫu học viên dùng cho CP3. Bộ nhãn được trình bày như kết quả Nguyễn Công Quân hoàn thành độc lập trước khi đối chiếu với bộ nhãn của Nguyễn Văn Đăng.
+Phiếu này là bài mẫu học viên dùng để tham khảo CP3. Nó không chứng minh việc gắn nhãn độc lập của Nguyễn Công Quân và không được dùng để tính tỉ lệ đồng thuận với nhãn của Nguyễn Văn Đăng.
 
 Năm nhãn được phép dùng:
 
@@ -35,4 +35,4 @@ Gắn theo nguyên nhân gốc, không gắn theo chỗ cần sửa.
 | 19 | Khách yêu cầu hoàn phí cho đơn từ 14 tháng trước. Trợ lý chỉ truy cập được dữ liệu 12 tháng. Trợ lý nói rõ không tra được và chuyển cho nhân viên kèm tóm tắt. | Giới hạn hệ thống | Đơn nằm ngoài cửa sổ dữ liệu 12 tháng mà trợ lý truy cập được. |
 | 20 | Khách gửi lại yêu cầu sau 10 phút vì chưa thấy phản hồi. Trợ lý hoàn hai lần cho cùng một đơn vì lệnh thứ hai không có khoá chống trùng. | Hệ thống | Thiếu khoá chống trùng làm hệ thống hoàn hai lần cùng một đơn. |
 
-Chỉ đối chiếu bộ nhãn này với người gắn nhãn 2 sau khi bộ nhãn thứ hai đã được hoàn thành độc lập.
+Hai thành viên chỉ được tính tỉ lệ đồng thuận từ các bộ nhãn do họ tự hoàn thành độc lập trước khi đối chiếu.

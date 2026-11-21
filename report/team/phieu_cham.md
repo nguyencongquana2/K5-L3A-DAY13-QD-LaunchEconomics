@@ -2,6 +2,8 @@
 
 Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo bằng chứng trong hồ sơ, không theo cách trình bày: một đề xuất No-go có lý do bằng số được điểm cao hơn một đề xuất Go bỏ qua con số bất lợi.
 
+**Trạng thái:** chưa có tên và hồ sơ của nhóm được QD chấm hoặc kết quả buổi duyệt chéo. Bảng tự rà hồ sơ QD nằm ở `tu_danh_gia_gate2a.md`; đó không phải điểm hội đồng và không được chép vào phiếu này.
+
 - Nhóm chấm (hội đồng): QD
 - Nhóm được chấm: ...
 

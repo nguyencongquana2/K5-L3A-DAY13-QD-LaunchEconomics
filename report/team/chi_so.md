@@ -18,12 +18,12 @@ Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý 
 
 | Event | Ai tạo | Thuộc tính chính | Thời điểm |
 | --- | --- | --- | --- |
-| `refund_request_created` | App khách | `request_id`, `loai`, `so_tien`, `arm`, `trace_id` | Khi khách gửi yêu cầu |
+| `refund_request_created` | App khách | `request_id`, `loai`, `so_tien`, `order_created_at`, `arm`, `trace_id` | Khi khách gửi yêu cầu |
 | `agent_run_completed` | Agent | `attempt`, `tokens_in`, `tokens_out`, `tool_calls`, `status`, `trace_id` | Sau mỗi lần chạy, kể cả lần lỗi |
 | `agent_suggestion_shown` | Giao diện nhân viên | `staff_id`, `so_tien_de_xuat`, `trace_id` | Khi gợi ý hiện ra |
 | `staff_review_decision` | Nhân viên CSKH | `quyet_dinh`, `phut_xem_lai`, `trace_id` | Khi nhân viên giữ, sửa hoặc bỏ gợi ý |
 | `staff_rework_completed` | Nhân viên CSKH | `phut_lam_lai`, `ly_do`, `trace_id` | Khi làm lại xong |
-| `refund_ledger_write` | Dịch vụ sổ cái | `idempotency_key`, `so_tien`, `ket_qua`, `trace_id` | Khi ghi giao dịch hoàn phí |
+| `refund_ledger_write` | Dịch vụ sổ cái | `request_id`, `idempotency_key`, `so_tien`, `ket_qua`, `error_code`, `trace_id` | Khi ghi giao dịch hoàn phí |
 | `handoff_to_staff` | Agent | `reason`, `tom_tat`, `trace_id` | Khi agent chuyển yêu cầu cho nhân viên |
 | `ticket_closed` | Hệ thống ticket | `closed_at`, `trace_id` | Khi đóng ticket |
 | `ticket_reopened` | Hệ thống ticket | `reopened_at`, `reason`, `trace_id` | Khi khách mở lại ticket |
