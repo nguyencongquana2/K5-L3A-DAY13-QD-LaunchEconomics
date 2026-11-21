@@ -21,6 +21,7 @@
 - Hoàn thiện `chi_so.md` với năm chỉ số, mười event có `trace_id`, kiểm tra chéo event và ba rủi ro kinh tế.
 - Soạn `group_report.md` theo bằng chứng hiện có và đánh dấu rõ các phần chưa hoàn thành.
 - Sau khi ghép phần của Nguyễn Văn Đăng, chạy lại toàn bộ `lab13.py`, kiểm tra cú pháp Python, xác thực `pilot_plan.yaml`, ba luật dừng và các placeholder còn lại.
+- Chuẩn bị `2A202603675_nhan_doc_lap.md` từ 20 ca trong đề gốc để gắn nhãn CP3 độc lập; phiếu không chứa đáp án hoặc nhãn của người thứ hai.
 
 ## 4. Bằng chứng
 
@@ -28,7 +29,7 @@
 - Kết quả chính: 4.472 đ mỗi việc thành công (simulated); giới hạn hai lần chạy cho tổng chi phí hệ thống 6.901.220 đ (simulated); chỉ số thử 82,83%, 27,12% và 4,25%.
 - Kiểm tra CP4: 1.251 yêu cầu mỗi nhóm; DE = 2,48 với 75 yêu cầu/nhân viên; cần 42 nhân viên mỗi nhóm nên không đủ 40 người; với mức chênh 6 điểm cần 299 yêu cầu/nhân viên.
 - `pilot_plan.yaml` đọc được bằng `yaml.safe_load`, có ba luật dừng và không còn dấu `?` ngoài chú thích; không tìm thấy từ bị cấm trong hồ sơ nhóm.
-- File bằng chứng: `src/lab13.py`, `report/team/chi_so.md`, `report/team/group_report.md`.
+- File bằng chứng: `src/lab13.py`, `report/team/chi_so.md`, `report/team/group_report.md`, `report/team/2A202603675_nhan_doc_lap.md`.
 
 ## 5. Công cụ AI đã dùng
 
