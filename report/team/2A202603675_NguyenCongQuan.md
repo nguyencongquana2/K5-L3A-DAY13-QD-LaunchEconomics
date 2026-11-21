@@ -21,7 +21,7 @@
 - Hoàn thiện `chi_so.md` với năm chỉ số, mười event có `trace_id`, kiểm tra chéo event và ba rủi ro kinh tế.
 - Soạn `group_report.md` theo bằng chứng hiện có và đánh dấu rõ các phần chưa hoàn thành.
 - Sau khi ghép phần của Nguyễn Văn Đăng, chạy lại toàn bộ `lab13.py`, kiểm tra cú pháp Python, xác thực `pilot_plan.yaml`, ba luật dừng và các placeholder còn lại.
-- Chuẩn bị `2A202603675_nhan_doc_lap.md` từ 20 ca trong đề gốc để gắn nhãn CP3 độc lập; phiếu không chứa đáp án hoặc nhãn của người thứ hai.
+- Hoàn thiện bài mẫu học viên `2A202603675_nhan_doc_lap.md` với 20 nhãn và lý do theo nguyên nhân gốc; chưa đối chiếu với bộ nhãn của người thứ hai.
 
 ## 4. Bằng chứng
 
